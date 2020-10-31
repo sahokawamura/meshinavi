@@ -25,6 +25,7 @@ services:
     volumes:
       - ./server:/var/www
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - node_modules:/var/www/node_modules
     depends_on:
       - app
 
@@ -37,5 +38,8 @@ services:
     # マウントするボリュームを指定(ホスト:コンテナ) ここにDBデータが保存される
     volumes:
       - "./mysql-data:/var/lib/mysql:cached"
+      - node_modules:/var/www/node_modules
     ports:
       - 3306:3306
+volumes:
+  node_modules:
