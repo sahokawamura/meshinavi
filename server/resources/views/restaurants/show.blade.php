@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>めしナビ - 詳細画面</title>
-</head>
-<body>
-    <table>
+@extends('layouts.app')
+
+@section('title', '詳細画面')
+
+@section('content')
+    <table class="table-bordered mb-5 mt-3">
+        <colgroup span="1" style="width:200px;background-color:#efefef;"></colgroup>
         <tbody>
             <tr>
                 <th>店名</th>
@@ -34,7 +31,8 @@
             </tr>
         </tbody>
     </table>
-    
+
     <a href="{{ action('RestaurantController@index') }}">戻る</a>    
-</body>
-</html>
+
+@endsection
+
