@@ -19,7 +19,9 @@ class RestaurantController extends Controller
             $query->where('name', 'like', '%' . $name . '%');
         }
         if($category) {
-            $query->where('category', 'like', '%' . $category . '%');
+            $query->whereHas('category', function($q) use ($category) {
+                $q->where('name', 'like', '%' . $category . '%');
+            });
         }
 
         $restaurants = $query->simplePaginate(10);
