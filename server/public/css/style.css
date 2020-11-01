@@ -8,6 +8,20 @@
     font-family: 'Noto Serif JP', serif;
 }
 
-.inline {
-    display: inline;
+.square-img-s{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.menu_images{
+    max-width: 600px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0;
+}
+
+.item {
+    display: inline-block;
+    margin: 16px 8px 0px 0px;
 }
